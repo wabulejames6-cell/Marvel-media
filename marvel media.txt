@@ -1,0 +1,78 @@
+<!doctype html>
+<div class="service">
+<h3>Alarm Monitoring</h3>
+<p>24/7 alarm monitoring with verified response coordination.</p>
+</div>
+<div class="service">
+<h3>Custom Solutions</h3>
+<p>Tailored solutions, from telematics integration to fleet management dashboards.</p>
+</div>
+</section>
+
+
+<section id="about" style="margin-top:26px">
+<div class="hero-card">
+<h2>About Marvel Tracking Security</h2>
+<p>Founded to bring reliable, technology-first tracking and protection services to businesses and individuals. Our trained operations team and secure platform help recover assets quickly and reduce loss.</p>
+</div>
+</section>
+
+
+<section id="contact" style="margin-top:22px">
+<div class="hero-card">
+<h2>Contact Us</h2>
+<p>Fill the form or use the email/phone details to reach our Customer Care team.</p>
+
+
+<form id="contactForm" onsubmit="handleForm(event)">
+<label for="name">Full name</label>
+<input id="name" name="name" required placeholder="Your full name" />
+
+
+<label for="email">Email</label>
+<input id="email" name="email" type="email" required placeholder="you@example.com" />
+
+
+<label for="message">Message</label>
+<textarea id="message" name="message" rows="5" required placeholder="How can we help?"></textarea>
+
+
+<button type="submit">Send message to Customer Care</button>
+</form>
+
+
+<div style="margin-top:14px;font-size:14px;color:#6b7280">
+Or email us directly at <a href="mailto:support@marveltracking.co">support@marveltracking.co</a>
+</div>
+</div>
+</section>
+
+
+<footer>
+<div>&copy; <span id="year"></span> Marvel Tracking Security — All rights reserved.</div>
+<div style="margin-top:6px">Email: <a href="mailto:info@marveltracking.co">info@marveltracking.co</a> • Customer Care: <a href="tel:+254700000000">+254 700 000 000</a></div>
+</footer>
+</div>
+
+
+<script>
+document.getElementById('year').textContent = new Date().getFullYear();
+
+
+function handleForm(e){
+e.preventDefault();
+const name = document.getElementById('name').value.trim();
+const email = document.getElementById('email').value.trim();
+const message = document.getElementById('message').value.trim();
+if(!name || !email || !message){
+alert('Please fill all fields.');
+return;
+}
+// Build a mailto link so the form opens user's email client
+const subject = encodeURIComponent('Customer Care: ' + (name));
+const body = encodeURIComponent('Name: '+name+'\nEmail: '+email+'\n\nMessage:\n'+message);
+window.location.href = `mailto:support@marveltracking.co?subject=${subject}&body=${body}`;
+}
+</script>
+</body>
+</html>
